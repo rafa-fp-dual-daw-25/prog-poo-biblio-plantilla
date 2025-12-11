@@ -26,6 +26,6 @@ public class Revista extends Item {
 
     @Override
     public String info() {
-        return "Título: " + getTitulo() + " Numero: " + getNumero();
+        return "Título: " + getTitulo() + " - Numero: " + getNumero();
     }
 }

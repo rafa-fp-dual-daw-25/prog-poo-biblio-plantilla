@@ -35,6 +35,6 @@ public class Libro extends Item {
 
     @Override
     public String info() {
-        return "Título: " + getTitulo() + " Páginas: " + getPaginas() + " Autor: " + this.autor.getNombre();
+        return "Título: " + getTitulo() + " - Páginas: " + getPaginas() + " - Autor: " + this.autor.getNombre();
     }
 }

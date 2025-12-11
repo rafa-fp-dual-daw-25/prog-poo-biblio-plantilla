@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
 public class Autor {
+    ArrayList<Libro> libros = new ArrayList<>();
     private int id;
     private String nombre;
     private String apellido;
-
-    ArrayList<Libro> libros = new ArrayList<>();
 
     public Autor(int id, String nombre, String apellido) {
         this.id = id;
@@ -43,10 +42,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Autor{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", id=" + id +
-                '}';
+        return "ID: " + this.id + " - Nombre: " + nombre + " - Apellidos: " + apellido;
     }
 }

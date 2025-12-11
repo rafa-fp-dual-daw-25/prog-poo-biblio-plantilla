@@ -44,12 +44,56 @@ public class Main {
 
                         break;
                     case 5:
-
+                        System.out.println("--- Listado de Libros (" + libros.size() + " en total) ---");
+                        if (libros.isEmpty()) {
+                            System.out.println("No hay libros registrados en la biblioteca.");
+                        } else {
+                            for (Libro libro : libros) {
+                                System.out.println("• " + libro.info());
+                            }
+                        }
                         break;
                     case 6:
-
+                        System.out.println("--- Listado de Revistas (" + revistas.size() + " en total) ---");
+                        if (revistas.isEmpty()) {
+                            System.out.println("No hay revistas registradas en la biblioteca.");
+                        } else {
+                            for (Revista revista : revistas) {
+                                System.out.println("• " + revista.info());
+                            }
+                        }
                         break;
                     case 7:
+                        System.out.println("--- Ver libros por autor ---");
+                        System.out.println("Autores disponibles:");
+                        for (Autor autor : autores) {
+                            System.out.println("ID: " + autor.getId() + " - " + autor.getNombre() + " " + autor.getApellido());
+                        }
+
+                        System.out.println("\nIngrese el ID del autor:");
+                        int idBuscado = scanner.nextInt();
+
+                        Autor autorEncontrado = null;
+
+                        for (Autor autor : autores) {
+                            if (autor.getId() == idBuscado) {
+                                autorEncontrado = autor;
+                                break;
+                            }
+                        }
+
+                        if (autorEncontrado != null) {
+                            System.out.println("\nLibros de " + autorEncontrado.getNombre() + " " + autorEncontrado.getApellido() + ":");
+                            if (autorEncontrado.libros.isEmpty()) {
+                                System.out.println("Este autor no tiene libros asignados.");
+                            } else {
+                                for (Libro libro : libros) {
+                                    System.out.println("• " + libro.info());
+                                }
+                            }
+                        } else {
+                            System.err.println("[ERROR] Autor con ID " + idBuscado + " no encontrado.");
+                        }
 
                         break;
                     case 0:
